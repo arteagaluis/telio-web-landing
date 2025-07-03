@@ -26,15 +26,27 @@ const Hero = () => {
                 variant="light" 
                 size="lg" 
                 className="d-flex align-items-center"
-                onClick={() => document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => {
+                  const el = document.getElementById('portfolio');
+                  if (el) {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
                 Ver trabajos <FiArrowRight className="ms-2" />
               </Button>
               <Button 
                 variant="outline-light" 
                 size="lg"
-                onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => {
+                  const el = document.getElementById('contact');
+                  if (el) {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
+
+
                 Contactar ahora
               </Button>
             </div>
