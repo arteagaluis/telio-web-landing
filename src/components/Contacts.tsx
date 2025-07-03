@@ -36,7 +36,7 @@ const Contact: FC = () => {
     return newErrors;
   };
   
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | any): void => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
     
