@@ -48,7 +48,12 @@ const Header = () => {
           <Button 
             variant="primary" 
             className="ms-lg-3 mt-3 mt-lg-0"
-            onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => {
+              const el = document.getElementById('contact');
+              if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
           >
             Cotizar Ahora
           </Button>
