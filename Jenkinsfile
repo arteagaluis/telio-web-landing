@@ -9,14 +9,16 @@ pipeline {
       }
     }
 
-    stage('Build') {
+ stage('Build con docker-compose') {
       steps {
-        sh '''
-        pwd
-        ls -la
-        docker-compose down
-        docker-compose up -d --build
-        '''
+        dir('../../') { // Subes dos niveles hasta llegar a la raíz de `iot-app`
+          sh '''
+            pwd
+            ls -la
+            docker-compose down
+            docker-compose up -d --build
+          '''
+        }
       }
     }
   }
