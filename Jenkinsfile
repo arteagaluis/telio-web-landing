@@ -12,6 +12,7 @@ pipeline {
     stage('Build landing-page') {
       steps {
         sh 'docker-compose down || true'
+        sh 'docker rm -f landing-page || true'
         sh 'docker-compose build'
         sh 'docker-compose up -d'
       }
