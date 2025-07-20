@@ -9,17 +9,15 @@ pipeline {
       }
     }
 
- stage('Build con docker-compose') {
-      steps {
-        dir('../../') { // Subes dos niveles hasta llegar a la raíz de `iot-app`
-          sh '''
-            pwd
-            ls -la
-            docker-compose down
-            docker-compose up -d --build
-          '''
+    stages {
+        stage('Build landing-page') {
+            steps {
+                dir('frontend/telio-web-landing') {
+                    sh 'docker-compose down || true'
+                    sh 'docker-compose build'
+                    sh 'docker-compose up -d'
+                }
+            }
         }
-      }
     }
-  }
 }
