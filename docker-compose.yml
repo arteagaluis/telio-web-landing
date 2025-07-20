@@ -1,8 +1,9 @@
 services:
-
   landing-page:
-     image: landing-page
-     build: ./frontend/telio-web-landing
-     container_name: landing-page
-     ports:
-       - "3000:3000"
+    image: landing-page
+    build:
+      context: ./frontend/telio-web-landing
+      dockerfile: Dockerfile
+    container_name: landing-page
+    ports:
+      - "3000:3000"
