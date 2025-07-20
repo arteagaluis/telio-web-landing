@@ -9,12 +9,15 @@ pipeline {
       }
     }
 
-    stage('Build') {
+  stage('Build') {
       steps {
-        sh '''
-        docker-compose down
-        docker-compose up -d --build
-        '''
+        // Moverse al directorio raíz donde está docker-compose.yml
+        dir('../../') {
+          sh '''
+          docker-compose down
+          docker-compose up -d --build
+          '''
+        }
       }
     }
   }
