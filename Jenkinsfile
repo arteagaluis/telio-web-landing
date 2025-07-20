@@ -9,16 +9,14 @@ pipeline {
       }
     }
 
-    stages {
-        stage('Build landing-page') {
-            steps {
-                dir('frontend/telio-web-landing') {
-                    sh 'docker-compose down || true'
-                    sh 'docker-compose build'
-                    sh 'docker-compose up -d'
-                }
-            }
+    stage('Build landing-page') {
+      steps {
+        dir('frontend/telio-web-landing') {
+          sh 'docker-compose down || true'
+          sh 'docker-compose build'
+          sh 'docker-compose up -d'
         }
+      }
     }
-}
+  }
 }
