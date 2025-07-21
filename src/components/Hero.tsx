@@ -59,7 +59,7 @@ const Hero = () => {
                 <div className="bg-light border rounded p-3" style={{ transform: 'rotate(-3deg)' }}>
                   <div className="ratio ratio-16x9 bg-dark rounded overflow-hidden">
                     <div className="d-flex justify-content-center align-items-center h-100 text-white">
-                      <h3>TELIOT</h3>
+                      <h3>TELIOT ttt</h3>
                     </div>
                   </div>
                 </div>
